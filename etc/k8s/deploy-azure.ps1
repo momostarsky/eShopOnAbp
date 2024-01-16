@@ -1,0 +1,1 @@
+helm upgrade --install eshop-az eshoponabp -f ./eshoponabp/values.az.yaml --namespace eshop --create-namespace
