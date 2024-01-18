@@ -50,7 +50,7 @@ web:
 public-web:
   config:
     selfUrl: https://eshoponabp.dev
-    gatewayUrl: http://eshop-st-gateway-web-public:8080/
+    gatewayUrl: https://gateway-public.eshoponabp.dev/
     authServer:
       authority: https://account.eshoponabp.dev/realms/master
       requireHttpsMetadata: "false"
