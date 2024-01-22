@@ -17,7 +17,7 @@ keycloak:
     kcHttpEnabled: true
     kcHostnameUrl: https://account.eshoponabp.com
     kcHostnameAdminUrl: https://account.eshoponabp.com
-    jgroupsDnsQuery: eshop-az-keycloak:8080
+    jgroupsDnsQuery: eshop-az-keycloak
     kcHostnameStrictBackchannel: false
 
   ingress:
