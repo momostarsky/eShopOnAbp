@@ -8,7 +8,7 @@ namespace EShopOnAbp.CmskitService;
 
 public class Program
 {
-    public async static Task<int> Main(string[] args)
+    public static async Task<int> Main(string[] args)
     {
         FeatureConfigurer.Configure();
 
@@ -35,7 +35,7 @@ public class Program
         }
         finally
         {
-            Log.CloseAndFlush();
+            await Log.CloseAndFlushAsync();
         }
     }
 }
