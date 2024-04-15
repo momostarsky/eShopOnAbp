@@ -90,12 +90,21 @@ public class IdentityServiceHttpApiHostModule : AbpModule
         app.UseAbpClaimsMap();
         app.UseAuthorization();
         app.UseSwagger();
+       
         app.UseAbpSwaggerWithCustomScriptUI(options =>
         {
             var configuration = context.ServiceProvider.GetRequiredService<IConfiguration>();
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "Identity Service API");
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
         });
+        // app.AddAbpSwaggerGen(
+        //     options =>
+        //     {
+        //         options.SwaggerDoc("v1", new OpenApiInfo { Title = "Test API", Version = "v1" });
+        //         options.DocInclusionPredicate((docName, description) => true);
+        //         options.CustomSchemaIds(type => type.FullName);
+        //     }
+        // );
         app.UseAbpSerilogEnrichers();
         app.UseAuditing();
         app.UseUnitOfWork();
