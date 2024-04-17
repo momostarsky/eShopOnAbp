@@ -1,7 +1,5 @@
 $cdx = (pwd)
-
 $dir = $(find ./  -type d  -iname '*.EntityFrameworkCore')
-
 foreach($cd in $dir){
     Write-Output  "Working Dir:$cd "
     if(Test-Path -Path $cd -PathType Container){
@@ -12,8 +10,8 @@ foreach($cd in $dir){
             Set-Location -Path $cd
             dotnet ef database update
         }
-        
-     
+
+
         Set-Location -Path $cdx
     } else {
         Write-Host  "Dir Not Exists"

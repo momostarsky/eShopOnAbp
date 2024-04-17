@@ -47,5 +47,6 @@ public class EShopOnAbpSharedHostingMicroservicesModule : AbpModule
             var connection = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]!);
             return new RedisDistributedSynchronizationProvider(connection.GetDatabase());
         });
+         
     }
 }

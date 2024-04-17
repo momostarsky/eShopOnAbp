@@ -117,6 +117,7 @@ public class CmskitServiceHttpApiHostModule : AbpModule
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "Cmskit Service API");
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
         });
+        app.UseMiddleware< EShopOnAbp.Shared.Hosting.Middlewares.IndexHtmlRedirectMiddleware>();
         app.UseAbpSerilogEnrichers();
         app.UseAuditing();
         app.UseUnitOfWork();

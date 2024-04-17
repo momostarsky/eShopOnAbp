@@ -101,6 +101,7 @@ public class BasketServiceModule : AbpModule
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "Basket Service API");
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
         });
+        app.UseMiddleware< EShopOnAbp.Shared.Hosting.Middlewares.IndexHtmlRedirectMiddleware>();
         app.UseAbpSerilogEnrichers();
         app.UseAuditing();
         app.UseUnitOfWork();

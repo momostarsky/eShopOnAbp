@@ -99,6 +99,7 @@ public class AdministrationServiceHttpApiHostModule : AbpModule
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "Administration Service API");
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
         });
+        app.UseMiddleware< EShopOnAbp.Shared.Hosting.Middlewares.IndexHtmlRedirectMiddleware>();
         app.UseAbpSerilogEnrichers();
         app.UseAuditing();
         app.UseConfiguredEndpoints();

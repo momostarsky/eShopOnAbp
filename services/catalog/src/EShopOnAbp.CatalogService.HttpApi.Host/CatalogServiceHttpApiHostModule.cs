@@ -107,6 +107,7 @@ public class CatalogServiceHttpApiHostModule : AbpModule
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog Service API");
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
         });
+        app.UseMiddleware< EShopOnAbp.Shared.Hosting.Middlewares.IndexHtmlRedirectMiddleware>();
         app.UseAbpSerilogEnrichers();
         app.UseAuditing();
         app.UseUnitOfWork();

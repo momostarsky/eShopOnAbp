@@ -53,7 +53,7 @@ public class EShopOnAbpWebPublicGatewayModule : AbpModule
         app.UseRewriter(new RewriteOptions()
             // Regex for "", "/" and "" (whitespace)
             .AddRedirect("^(|\\|\\s+)$", "/swagger"));
-
+        app.UseMiddleware<EShopOnAbp.Shared.Hosting.Middlewares.IndexHtmlRedirectMiddleware>();
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapReverseProxy();
