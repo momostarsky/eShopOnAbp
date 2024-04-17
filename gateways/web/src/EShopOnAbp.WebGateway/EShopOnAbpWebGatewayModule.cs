@@ -79,10 +79,11 @@ public class EShopOnAbpWebGatewayModule : AbpModule
         app.UseRewriter(new RewriteOptions()
             // Regex for "", "/" and "" (whitespace)
             .AddRedirect("^(|\\|\\s+)$", "/swagger"));
-        
+     //
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapReverseProxyWithLocalization();
+            // endpoints.MapReverseProxyWithLocalization();
+            endpoints.MapReverseProxy();
         });
     }
 }

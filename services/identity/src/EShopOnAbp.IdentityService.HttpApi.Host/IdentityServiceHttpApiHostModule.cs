@@ -1,7 +1,6 @@
 using EShopOnAbp.IdentityService.DbMigrations;
 using EShopOnAbp.IdentityService.EntityFrameworkCore;
 using EShopOnAbp.Shared.Hosting.AspNetCore;
-using EShopOnAbp.Shared.Hosting.Gateways;
 using EShopOnAbp.Shared.Hosting.Microservices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
@@ -11,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+ 
 using Microsoft.AspNetCore.Identity;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
@@ -23,6 +23,7 @@ namespace EShopOnAbp.IdentityService;
     typeof(IdentityServiceHttpApiModule),
     typeof(IdentityServiceApplicationModule),
     typeof(IdentityServiceEntityFrameworkCoreModule)
+   
 )]
 public class IdentityServiceHttpApiHostModule : AbpModule
 {
@@ -106,9 +107,10 @@ public class IdentityServiceHttpApiHostModule : AbpModule
         //     }
         // );
         app.UseAbpSerilogEnrichers();
+        app.UseMiddleware< EShopOnAbp.Shared.Hosting.Middlewares.IndexHtmlRedirectMiddleware>();
         app.UseAuditing();
         app.UseUnitOfWork();
-        app.UseConfiguredEndpoints();
+        app.UseConfiguredEndpoints( );
     }
 
     public override async Task OnPostApplicationInitializationAsync(ApplicationInitializationContext context)
