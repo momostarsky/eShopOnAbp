@@ -5,6 +5,8 @@ This is a reference project for those who want to build microservice solutions w
 See [the blog post](https://blog.abp.io/abp/Introducing-the-eShopOnAbp-Project) for more info.
 
 Live demo 👉 https://www.eshoponabp.com/
+##  Install Keycloak
+[参考地址](https://gruchalski.com/posts/2020-09-05-introduction-to-keycloak-authorization-services/#settings-tab)
 
 ## Issues
 
