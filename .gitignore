@@ -357,3 +357,4 @@ MigrationBackup/
 .ionide/
 
 .angular
+apps/public-web/src/EShopOnAbp.PublicWeb/wwwroot/libs/
